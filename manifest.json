@@ -2,11 +2,18 @@
   "manifest_version": 2,
 
   "name": "Download Directory Manager",
-  "description": "This plugin manages your donwload directories. Wether it is just your default directorie or subdir or something else.",
+  "description": "This plugin manages your download directory. Each download gets a subdirectory named like its domain.",
   "version": "0.1",
-
+  
+  "permissions": [
+          "downloads"
+  ],
+  
   "browser_action": {
-    "default_icon": "./assets/images/icon.png",
-    "default_popup": "./html/popup.html"
+    "default_icon": "./assets/images/icon.png"
+  },
+
+  "background": {
+    "scripts": ["assets/js/downloadlistener.js"]
   }
 }
