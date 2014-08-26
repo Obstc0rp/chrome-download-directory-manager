@@ -15,5 +15,9 @@
 
   "background": {
     "scripts": ["assets/js/downloadlistener.js"]
+  },
+  
+  "icons": { 
+    "128": "./assets/images/icon.png" 
   }
 }
