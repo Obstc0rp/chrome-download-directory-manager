@@ -1,18 +1,50 @@
-chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, suggest){
+//initial setting
+var storageItem = 'managerObject';
+var managerObject = JSON.parse(localStorage.getItem(storageItem));
+if(!managerObject){
+    managerObject = {
+        activated: true,
+        allPages: true,
+        domains: []
+    }
 
-	var url = downloadItem.url;
-	var urlArr = url.split('/');
-	var escapeChars = ['<', '>', ':', '"', '\\', '/', '|', '*', '?'];
+    localStorage.setItem(storageItem, JSON.stringify(managerObject));
+}
 
-	var domain = urlArr[2];
-	
-	var suggestion = {};
+//initial setting end
 
-    domain = domain.replace(/([<>*+?^=!:${}()|\[\]\/\\])/g, '');
+if(managerObject.activated){
+    chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, suggest){
+        var url = downloadItem.url;
 
-	suggestion.filename = './' + domain + '/' + downloadItem.filename;
+        var urlArr = url.split('/');
 
-	suggest(suggestion);
+        var domain = urlArr[2];
 
-	return true;
-});
+        var suggestion = {};
+
+        if(managerObject.allPages){
+
+            domain = domain.replace(/([<>*+?^=!:${}()|\[\]\/\\])/g, '');
+
+            suggestion.filename = './' + domain + '/' + downloadItem.filename;
+        }else{
+
+            var index = managerObject.domains.indexOf(domain);
+
+            if(index){
+
+                domain = domain.replace(/([<>*+?^=!:${}()|\[\]\/\\])/g, '');
+
+                suggestion.filename = './' + domain + '/' + downloadItem.filename;
+            }else{
+
+                suggestion.filename = downloadItem.filename;
+            }
+        }
+
+        suggest(suggestion);
+        
+        return true;
+    });
+}
