@@ -10,11 +10,12 @@
   ],
   
   "browser_action": {
-    "default_icon": "./assets/images/icon.png"
+    "default_icon": "./assets/images/icon.png",
+    "default_popup": "./html/popup.html"
   },
 
   "background": {
-    "scripts": ["assets/js/downloadlistener.js"]
+    "scripts": ["assets/js/background.js"]
   },
   
   "icons": { 
