@@ -24,7 +24,6 @@
     "test",
     "tests"
   ],
-  "directory": "assets/bower_components",
   "dependencies": {
     "jQuery": "2.1.1",
     "bootstrap": "3.2.0"

@@ -13,8 +13,11 @@ if(!managerObject){
 
 //initial setting end
 
-if(managerObject.activated){
-    chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, suggest){
+chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, suggest){
+    managerObject = JSON.parse(localStorage.getItem(storageItem));
+
+    if(managerObject.activated == true){
+
         var url = downloadItem.url;
 
         var urlArr = url.split('/');
@@ -23,7 +26,7 @@ if(managerObject.activated){
 
         var suggestion = {};
 
-        if(managerObject.allPages){
+        if(managerObject.allPages == true){
 
             domain = domain.replace(/([<>*+?^=!:${}()|\[\]\/\\])/g, '');
 
@@ -44,7 +47,6 @@ if(managerObject.activated){
         }
 
         suggest(suggestion);
-        
-        return true;
-    });
-}
+    }
+    return true;
+});
