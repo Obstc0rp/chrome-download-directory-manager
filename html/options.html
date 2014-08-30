@@ -1,10 +1,36 @@
 <html>
 	<head>
 		<link type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+		<link type="text/css" href="../assets/css/options.css" rel="stylesheet">
 	</head>
 	<body>
-		<h1>Options</h1>
+		<div>
+			<h1>Options</h1>
+			<hr>
+			<button class="btn btn-success" type="button" id="pluginActivate"><span id="spanActivate" class="glyphicon glyphicon-ok"></span> Activated</button>
+			<hr>
+			<div class="panel-group" id="accordion">
+			    <div class="panel panel-default">
+			      <div class="panel-heading">
+			        <h4 class="panel-title">
+			          <a id="selectDomains" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+			            Select domains
+			          </a>
+			        </h4>
+			      </div>
+			      <div id="collapseOne" class="panel-collapse collapse">
+			       <div class="panel-body">
+						<select id="domains" multiple size="10"></select>
+						<input id="newDomain" type="text" class="inline-block" placeholder="domain" />
+						<button id="addDomain" class="btn btn-default">Add domain</button>
+			       </div>
+			      </div>
+			    </div>
+			</div>
+		</div>
 	</body>
 	<script type="text/javascript" src="../bower_components/jQuery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="../bower_components/bootstrap/js/collapse.js"></script>
 	<script type="text/javascript" src="../assets/js/options.js"></script>
+	<script type="text/javascript" src="../assets/js/frontend.js"></script>
 </html>

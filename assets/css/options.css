@@ -1,0 +1,9 @@
+body {
+	margin: 0 auto;
+	padding: 10px;	/* TODO: change */
+	background-color: #fafafa;
+}
+
+#domains {
+	width: 200px;
+}

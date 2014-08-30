@@ -10,11 +10,15 @@ $(document).ready(function(){
 
 function refresh () {
 	if(managerObject.activated){
-		$('#pluginActivate').attr('class', 'btn btn-success');
-		$('#spanActivate').attr('class', 'glyphicon glyphicon-ok');
+		$('#pluginActivate').removeClass('btn-danger'); //attr('class', 'btn btn-success');
+		$('#pluginActivate').addClass('btn-success');
+		$('#spanActivate').removeClass('glyphicon-remove');
+		$('#spanActivate').addClass('glyphicon-ok');
 	} else {
-		$('#pluginActivate').attr('class', 'btn btn-danger');
-		$('#spanActivate').attr('class', 'glyphicon glyphicon-remove');
+		$('#pluginActivate').removeClass('btn-success'); //attr('class', 'btn btn-success');
+		$('#pluginActivate').addClass('btn-danger');
+		$('#spanActivate').removeClass('glyphicon-ok');
+		$('#spanActivate').addClass('glyphicon-remove');
 	}
 }
 
