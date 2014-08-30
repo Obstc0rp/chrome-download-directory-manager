@@ -18,11 +18,10 @@ chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, sugges
 
     if(managerObject.activated == true){
 
-        var url = downloadItem.url;
+        var domain = getDomainFromUrl(downloadItem.url); // downloadItem.url; //get download url
 
-        var urlArr = url.split('/');
-
-        var domain = urlArr[2];
+        //TODO: exclude subdomain. TODO: IP address
+        domain = checkForIPAndSubdomain(domain);
 
         var suggestion = {};
 
@@ -50,3 +49,22 @@ chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, sugges
     }
     return true;
 });
+
+function getDomainFromUrl(url){
+
+    var urlArr = url.split('/');    //split by '/'
+    var domain = urlArr[2]; //domain is 3. position
+
+    return domain;
+}
+
+function checkForIPAndSubdomain(domain){
+
+    var domainParts = domain.split('.');
+
+    if(domainParts.length < 4){ //if it's not a IP address...
+        domain = domainParts[domainParts.length-2] + '.' + domainParts[domainParts.length-1];  //take laste 2 positions for domain without subdomain
+    }
+
+    return domain;
+}
