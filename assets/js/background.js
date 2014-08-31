@@ -16,6 +16,8 @@ if(!managerObject){
 chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, suggest){
     managerObject = JSON.parse(localStorage.getItem(storageItem));
 
+    console.log(managerObject);
+
     if(managerObject.activated == true){
 
         var domain = getDomainFromUrl(downloadItem.url); // downloadItem.url; //get download url
@@ -34,7 +36,7 @@ chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, sugges
 
             var index = managerObject.domains.indexOf(domain);
 
-            if(index){
+            if(index >= 0){
 
                 domain = domain.replace(/([<>*+?^=!:${}()|\[\]\/\\])/g, '');
 
@@ -47,6 +49,7 @@ chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, sugges
 
         suggest(suggestion);
     }
+
     return true;
 });
 

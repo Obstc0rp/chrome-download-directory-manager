@@ -47,11 +47,29 @@ function addEventsOptions(){
 		managerObject.domains.push(newDomain);	//push new domain into array
 
 		localStorage.setItem(storageItem, JSON.stringify(managerObject));
-		console.log(managerObject);
 
+		$('#newDomain').val('');
 		refreshOptions();
 	});
 
-	//TODO:
-	//add event for deleting domains. "esc"-click and button
+	$('#domains').keypress(function(e){
+		//TODO: escape
+	});
+
+	$('#removeDomain').click(function(){
+		var domainSelect = document.getElementById('domains');
+
+		domainSelect.remove(domainSelect.selectedIndex);
+
+		managerObject.domains = [];	//clear domain list
+		
+		for(var i = 0; i < domainSelect.length; i++){
+			managerObject.domains.push(domainSelect[i].value);
+		}
+		console.log(managerObject);
+
+		localStorage.setItem(storageItem, JSON.stringify(managerObject));
+
+		refreshOptions();
+	});
 }
