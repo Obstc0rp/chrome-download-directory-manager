@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Download Directory Manager",
-  "description": "This plugin manages your download directory. Each download gets a subdirectory named like its domain.",
+  "description": "This extension manages the download directory for each download.",
   "version": "0.1",
   
   "permissions": [
