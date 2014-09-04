@@ -6,6 +6,8 @@ $(document).ready(function(){
 
 	refresh();	
 	addEvents();
+
+	$('#selectDomains').tooltip();
 });
 
 function refresh () {

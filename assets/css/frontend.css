@@ -11,3 +11,11 @@ h3 {
 #pluginActivate {
 	width: 100%;
 }
+
+.btn {
+	border-radius: 0;
+}
+
+hr {
+	margin: 2px;
+}

@@ -4,6 +4,26 @@ body {
 	background-color: #fafafa;
 }
 
+.panel-body * {
+	margin: 5px;
+}
+
 #domains {
-	width: 200px;
+	float: left;
+}
+
+#optionName {
+	margin-top: 30px;
+}
+
+#newDomain {
+	margin-top: 30px;
+}
+
+.btn {
+	border-radius: 0;
+}
+
+.panel-group .panel {
+	border-radius: 0;
 }

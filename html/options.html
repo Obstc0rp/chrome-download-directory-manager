@@ -4,34 +4,41 @@
 		<link type="text/css" href="../assets/css/options.css" rel="stylesheet">
 	</head>
 	<body>
-		<div>
-			<h1>Options</h1>
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<div class="col-lg-12">
+				<h1 class="col-lg-4">Options</h1>
+				<p id="optionName" class="col-lg-8"> - download directory manager</p>
+			</div>
+			<div class="clearfix"></div>
 			<hr>
-			<button class="btn btn-success" type="button" id="pluginActivate"><span id="spanActivate" class="glyphicon glyphicon-ok"></span> Activated</button>
+			<button class="btn btn-success center-block" type="button" id="pluginActivate"><span id="spanActivate" class="glyphicon glyphicon-ok"></span> Activated</button>
 			<hr>
 			<div class="panel-group" id="accordion">
 			    <div class="panel panel-default">
 			      <div class="panel-heading">
 			        <h4 class="panel-title">
-			          <a id="selectDomains" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-			            Select domains
+			          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+			            <div id="selectDomains" title="Add domains to the white list. Only this domains get subdirectories." data-placement="left" data-toggle="tooltip">Select domains <sup><span class="glyphicon glyphicon-question-sign"></span></sup></div>
 			          </a>
 			        </h4>
 			      </div>
 			      <div id="collapseOne" class="panel-collapse collapse">
 			       <div class="panel-body">
-						<select id="domains" multiple size="10"></select>
-						<input id="newDomain" type="text" class="inline-block" placeholder="domain" />
-						<button id="addDomain" class="btn btn-default">Add domain</button>
-						<button id="removeDomain" class="btn btn-danger">Delete domain</button>
+						<select id="domains" class="col-lg-7" multiple size="10"></select>
+						<input id="newDomain" class="col-lg-4" type="text" placeholder="domain" /><br>
+						<button id="addDomain" class="col-lg-4 btn btn-default">Add domain</button><br>
+						<button id="removeDomain" class="col-lg-4 btn btn-danger">Delete domain</button>
 			       </div>
 			      </div>
 			    </div>
 			</div>
 		</div>
+		<div class="col-lg-4"></div>
 	</body>
 	<script type="text/javascript" src="../bower_components/jQuery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="../bower_components/bootstrap/js/collapse.js"></script>
+	<script type="text/javascript" src="../bower_components/bootstrap/js/tooltip.js"></script>
 	<script type="text/javascript" src="../assets/js/options.js"></script>
 	<script type="text/javascript" src="../assets/js/frontend.js"></script>
 </html>
