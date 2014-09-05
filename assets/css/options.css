@@ -2,6 +2,8 @@ body {
 	margin: 0 auto;
 	padding: 10px;	/* TODO: change */
 	background-color: #fafafa;
+	font-family: 'Open Sans', serif;
+	font-weight: 300;
 }
 
 .panel-body * {
@@ -13,7 +15,7 @@ body {
 }
 
 #optionName {
-	margin-top: 30px;
+	margin-top: 32px;
 }
 
 #newDomain {
@@ -26,4 +28,8 @@ body {
 
 .panel-group .panel {
 	border-radius: 0;
+}
+
+.glyphicon-question-sign {
+	opacity: 0.7;
 }
