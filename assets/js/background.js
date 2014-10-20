@@ -20,9 +20,8 @@ chrome.downloads.onDeterminingFilename.addListener(function(downloadItem, sugges
 
     if(managerObject.activated == true){
 
-        var domain = getDomainFromUrl(downloadItem.url); // downloadItem.url; //get download url
+        var domain = getDomainFromUrl(downloadItem.url); 
 
-        //TODO: exclude subdomain. TODO: IP address
         domain = checkForIPAndSubdomain(domain);
 
         var suggestion = {};
@@ -65,8 +64,14 @@ function checkForIPAndSubdomain(domain){
 
     var domainParts = domain.split('.');
 
-    if(domainParts.length < 4){ //if it's not a IP address...
-        domain = domainParts[domainParts.length-2] + '.' + domainParts[domainParts.length-1];  //take laste 2 positions for domain without subdomain
+    if(domainParts.length < 4 && domainParts.length > 1){ //if it's not an IP address and has got subdomain...
+        domain = domainParts[domainParts.length-2] + '.' + domainParts[domainParts.length-1];  //take last 2 positions for domain without subdomain
+    }
+
+    domainParts = domain.split(':');
+
+    if(domainParts.length > 1){ //if there is a port number
+        domain = domainParts[0];    //only domain part without port number
     }
 
     return domain;
