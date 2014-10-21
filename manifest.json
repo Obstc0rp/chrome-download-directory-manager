@@ -2,8 +2,8 @@
   "manifest_version": 2,
 
   "name": "Download Directory Manager",
-  "description": "This extension manages the download directory for each download.",
-  "version": "0.1",
+  "description": "This extension manages your donwload directory. Each download gets a subdirectory named as its domain.",
+  "version": "1.0",
   
   "permissions": [
           "downloads"

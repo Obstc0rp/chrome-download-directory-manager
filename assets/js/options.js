@@ -9,6 +9,8 @@ $(document).ready(function(){
 
 	refreshOptions();
 	addEventsOptions();
+	
+	$('#selectDescription').tooltip();
 });
 
 function refreshOptions(){
