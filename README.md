@@ -10,6 +10,15 @@ Or you filter the domains and just those downloads get a subdirectory which doma
 Installation
 ------------
 
+# Option 1
+
+	$ cd extension
 	$ bower install
 
 Then add the unpacked package to chrome extensions in developer mode.
+
+OR
+
+# Option 2
+
+Copy the .crx file in bin/ to your extensions in chrome.
