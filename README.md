@@ -14,3 +14,9 @@ Installation
 	$ bower install
 
 Then add the unpacked package to chrome extensions in developer mode.
+
+
+Deprecated
+----------
+
+This extension will not be supported anymore. Please use Download Helper instead.
